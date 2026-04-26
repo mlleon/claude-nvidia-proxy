@@ -1,0 +1,33 @@
+nohup: ignoring input
+2026/04/25 19:46:19 listening on :8082
+2026/04/25 19:46:19 upstream: https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 19:46:19 inbound auth: disabled (SERVER_API_KEY not set)
+2026/04/25 19:56:57 [req_1777118217516274863] inbound summary=(disabled)
+2026/04/25 19:56:57 [req_1777118217516274863] forward url=https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 19:56:57 [req_1777118217516274863] forward headers=(disabled)
+2026/04/25 19:56:57 [req_1777118217516274863] forward body=(disabled)
+2026/04/25 19:57:10 [req_1777118217516274863] upstream status=200 (stream)
+2026/04/25 19:57:14 [req_1777118217516274863] stream summary chunks=9 text_chars=36 tool_delta_chunks=0 tool_args_chars=0 finish_reason="stop" saw_done=true
+2026/04/25 19:57:59 [req_1777118279484352439] inbound summary=(disabled)
+2026/04/25 19:57:59 [req_1777118279484352439] forward url=https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 19:57:59 [req_1777118279484352439] forward headers=(disabled)
+2026/04/25 19:57:59 [req_1777118279484352439] forward body=(disabled)
+2026/04/25 19:58:48 [req_1777118279484352439] upstream status=200 (stream)
+2026/04/25 19:58:48 [req_1777118279484352439] stream proxy error: context canceled
+2026/04/25 19:58:57 [req_1777118337035796811] inbound summary=(disabled)
+2026/04/25 19:58:57 [req_1777118337035796811] forward url=https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 19:58:57 [req_1777118337035796811] forward headers=(disabled)
+2026/04/25 19:58:57 [req_1777118337035796811] forward body=(disabled)
+2026/04/25 19:59:17 [req_1777118337035796811] stream proxy error: Post "https://integrate.api.nvidia.com/v1/chat/completions": context canceled
+2026/04/25 19:59:31 [req_1777118371115701660] inbound summary=(disabled)
+2026/04/25 19:59:31 [req_1777118371115701660] forward url=https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 19:59:31 [req_1777118371115701660] forward headers=(disabled)
+2026/04/25 19:59:31 [req_1777118371115701660] forward body=(disabled)
+2026/04/25 20:01:21 [req_1777118371115701660] upstream status=200 (stream)
+2026/04/25 20:01:21 [req_1777118371115701660] stream summary chunks=3 text_chars=29 tool_delta_chunks=0 tool_args_chars=0 finish_reason="stop" saw_done=true
+2026/04/25 20:01:51 [req_1777118511816711761] inbound summary=(disabled)
+2026/04/25 20:01:51 [req_1777118511816711761] forward url=https://integrate.api.nvidia.com/v1/chat/completions
+2026/04/25 20:01:51 [req_1777118511816711761] forward headers=(disabled)
+2026/04/25 20:01:51 [req_1777118511816711761] forward body=(disabled)
+2026/04/25 20:02:51 [req_1777118511816711761] upstream status=200 (stream)
+2026/04/25 20:03:11 [req_1777118511816711761] stream summary chunks=20 text_chars=334 tool_delta_chunks=0 tool_args_chars=0 finish_reason="stop" saw_done=true

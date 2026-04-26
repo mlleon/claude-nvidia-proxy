@@ -2,7 +2,7 @@
 
 Go https://build.nvidia.com/explore/discover, register an account, and generate an API key. 
 NVIDIA provides several models, like moonshotai/kimi-k2.5、z-ai/glm4.7、z-ai/glm5 and minimaxai/minimax-m2.1
-Then, configure the config.json file and run the program, ensuring it listens on port 3001.
+Then, configure the config.json file and run the program, ensuring it listens on port 8082.
 
 Expose `POST /v1/messages` (Anthropic/Claude style), convert to OpenAI Chat Completions, and proxy to NVIDIA (configured via `config.json`).
 
@@ -21,7 +21,7 @@ Do not commit your real `nvidia_key`.
 - `PROVIDER_API_KEY` optional: overrides `nvidia_key` from config
 - `UPSTREAM_URL` optional: overrides `nvidia_url` from config
 - `SERVER_API_KEY` optional: enable inbound auth; accepts `Authorization: Bearer ...` or `x-api-key: ...`
-- `ADDR` default `:3001`
+- `ADDR` default `:8082`
 - `UPSTREAM_TIMEOUT_SECONDS` default `300`
 - `LOG_BODY_MAX_CHARS` default `4096` (`0` disables body logging)
 - `LOG_STREAM_TEXT_PREVIEW_CHARS` default `256` (`0` disables stream preview logging)
@@ -36,7 +36,7 @@ go run .
 
 use zai/glm5 model
 ```bash
-export ANTHROPIC_BASE_URL=http://localhost:3001
+export ANTHROPIC_BASE_URL=http://localhost:8082
 export ANTHROPIC_AUTH_TOKEN=nvapi-api-key
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=z-ai/glm5
 export ANTHROPIC_DEFAULT_SONNET_MODEL=z-ai/glm5
@@ -47,7 +47,7 @@ claude
 
 use moonshotai/kimi-k2.5 model
 ```
-export ANTHROPIC_BASE_URL=http://localhost:3001
+export ANTHROPIC_BASE_URL=http://localhost:8082
 export ANTHROPIC_AUTH_TOKEN=nvapi-api-key
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=moonshotai/kimi-k2.5
 export ANTHROPIC_DEFAULT_SONNET_MODEL=moonshotai/kimi-k2.5
@@ -56,7 +56,7 @@ export ANTHROPIC_DEFAULT_OPUS_MODEL=moonshotai/kimi-k2.5
 
 use zai/glm4.7 model
 ```bash
-export ANTHROPIC_BASE_URL=http://localhost:3001
+export ANTHROPIC_BASE_URL=http://localhost:8082
 export ANTHROPIC_AUTH_TOKEN=nvapi-api-key
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=z-ai/glm4.7
 export ANTHROPIC_DEFAULT_SONNET_MODEL=z-ai/glm4.7
@@ -67,7 +67,7 @@ claude
 
 use zai/glm4.7 model
 ```bash
-export ANTHROPIC_BASE_URL=http://localhost:3001
+export ANTHROPIC_BASE_URL=http://localhost:8082
 export ANTHROPIC_AUTH_TOKEN=nvapi-api-key
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=minimaxai/minimax-m2.1
 export ANTHROPIC_DEFAULT_SONNET_MODEL=minimaxai/minimax-m2.1
@@ -88,7 +88,7 @@ claude
 Example (non-stream):
 
 ```bash
-curl -sS http://127.0.0.1:3001/v1/messages \
+curl -sS http://127.0.0.1:8082/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{
     "model":"z-ai/glm4.7",
@@ -100,7 +100,7 @@ curl -sS http://127.0.0.1:3001/v1/messages \
 Example (stream):
 
 ```bash
-curl -N http://127.0.0.1:3001/v1/messages \
+curl -N http://127.0.0.1:8082/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{
     "model":"z-ai/glm4.7",
@@ -145,7 +145,7 @@ GOOS=windows GOARCH=amd64 go build -trimpath -ldflags "-s -w" -o dist/claude-nvi
 Example (non-stream):
 
 ```bash
-curl -sS http://127.0.0.1:3001/v1/messages \
+curl -sS http://127.0.0.1:8082/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{
     "model":"z-ai/glm4.7",
@@ -157,7 +157,7 @@ curl -sS http://127.0.0.1:3001/v1/messages \
 Example (stream):
 
 ```bash
-curl -N http://127.0.0.1:3001/v1/messages \
+curl -N http://127.0.0.1:8082/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{
     "model":"z-ai/glm4.7",
